@@ -14,6 +14,19 @@ Install the reusable contract first, then run the service:
 ./mvnw spring-boot:run
 ```
 
+## Environment variables
+
+Local Compose reads these values from the root platform `.env`. Store them as
+repository secrets for Actions and in `platform-secrets` for Kubernetes.
+
+| Variable | Purpose |
+| --- | --- |
+| `SPRING_DATASOURCE_URL` | PostgreSQL JDBC URL |
+| `SPRING_DATASOURCE_USERNAME` | Database username |
+| `SPRING_DATASOURCE_PASSWORD` | Database password |
+| `JWT_SECRET` | Shared JWT HMAC secret |
+| `PRODUCT_URL` | Product service base URL |
+
 ## GitHub Actions secrets
 
 Add these under **Settings → Secrets and variables → Actions** in
