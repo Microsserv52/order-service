@@ -1,7 +1,7 @@
 FROM eclipse-temurin:25-jdk AS build
 WORKDIR /workspace
 COPY api/order /order
-RUN cd /order && ./mvnw -q -DskipTests install
+RUN cd /order && ./mvnw -q -DskipTests -Dspring-boot.repackage.skip=true install
 COPY api/order-service /workspace
 RUN ./mvnw -q -DskipTests package
 
